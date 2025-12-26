@@ -9,6 +9,9 @@ BLECharacteristic *pCharacteristic = NULL;
 #define SERVICE_UUID        "12345678-1234-1234-1234-123456789012"
 #define CHARACTERISTIC_UUID "87654321-4321-4321-4321-210987654321"
 
+const int thermPin = 32;
+int thermValue = 0;
+
 void setup() {
   Serial.begin(115200);
   
@@ -35,5 +38,10 @@ void setup() {
 }
 
 void loop() {
+    //test Thermistor Readings
+    thermValue = analogRead(thermPin);
+    Serial.println("Temp: ");
+    Serial.println(thermValue);
+    delay(500);
   // Do nothing here
 }
