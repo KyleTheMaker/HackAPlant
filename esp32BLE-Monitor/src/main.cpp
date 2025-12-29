@@ -10,7 +10,10 @@ BLECharacteristic *pCharacteristic = NULL;
 #define CHARACTERISTIC_UUID "87654321-4321-4321-4321-210987654321"
 
 const int thermPin = 32;
-int thermValue = 0;
+int thermValue;
+float r1 = 10000;
+float convLog, conversion, tempK, tempC;
+float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
 
 void setup() {
   Serial.begin(115200);
@@ -40,8 +43,19 @@ void setup() {
 void loop() {
     //test Thermistor Readings
     thermValue = analogRead(thermPin);
-    Serial.println("Temp: ");
+    conversion = r1 * (4095.0 / (float)thermValue - 1.0);
+    convLog = log(conversion);
+    tempK = (1.0 / (c1 + c2*convLog + c3*convLog*convLog*convLog));
+    tempC = tempK - 273.15;
+    Serial.print("pin val: ");
     Serial.println(thermValue);
-    delay(500);
+    Serial.print("Resistor Value: ");
+    Serial.println(conversion);
+    Serial.print("Temp Kelvin: ");
+    Serial.println(tempK);
+    Serial.print("Temp Celsius: ");
+    Serial.println(tempC);
+
+    delay(1500);
   // Do nothing here
 }
