@@ -43,7 +43,7 @@ void setup() {
 void loop() {
     //test Thermistor Readings
     thermValue = analogRead(thermPin);
-    conversion = r1 * (4095.0 / (float)thermValue - 1.0);
+    conversion = r1 / (4095.0 / (float)thermValue - 1.0);
     convLog = log(conversion);
     tempK = (1.0 / (c1 + c2*convLog + c3*convLog*convLog*convLog));
     tempC = tempK - 273.15;
