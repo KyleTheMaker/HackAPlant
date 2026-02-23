@@ -1,0 +1,79 @@
+# === Global ignores ===
+.DS_Store
+.env
+.idea
+.vscode/
+*.log
+*.stackdump
+
+# === React Native (Node, iOS, Android) ===
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+docs
+# iOS and Xcode
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+DerivedData/
+*.xcworkspace
+*.xcuserdatad/
+*.xcscheme
+*.ipa
+
+# Android and Gradle
+android/build/
+android/app/build/
+android/.gradle/
+android/app/.cxx/
+android/app/gradle/
+local.properties
+*.iml
+
+# Metro Bundler and specific build artifacts
+# index.android.bundle and main.jsbundle might need to be removed from git cache if already tracked
+# using `git rm -f --cached <file_path>`
+*.bundle
+/coverage
+/reports
+
+# === ESP32 Firmware (PlatformIO/Arduino/ESP-IDF specific files) ===
+
+# PlatformIO
+**/.pio/
+**/.pioenvs/
+**/.piolibdeps/
+**/.espressif/
+
+# General build files
+**/build/
+**/CMakeCache.txt
+**/CMakeFiles/
+**/*.bin
+**/*.elf
+**/*.map
+**/*.hex
+**/*.uf2
+*.opencd_args
+*.hex.bin
+bootloader/
+partitions/
+
+# Configuration files
+sdkconfig
+sdkconfig.old
+
+# Arduino specific
+**/*.ino.hex
+**/*.ino.bin
+
+# VS Code and other IDE specific
+# Only ignore editor-specific settings within the firmware directory if multiple editors are used
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json
+# ... or use a separate .gitignore in the firmware subdirectory to be more granular.
+
+# Source: Combined from standard React Native templates and PlatformIO community suggestions
