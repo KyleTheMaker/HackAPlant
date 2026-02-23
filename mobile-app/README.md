@@ -1,14 +1,9 @@
-# Update the Server URL! 👋
-
-create a .env file, replace SERVER_URL with yours (ex: https://catfact.ninja/fact)  
-EXPO_PUBLIC_HAP_SERVER_URL = SERVER_URL  
-
-## Get started
+# Get started
 
 1. Update the Server URL
 
-   Open the .env file and change the HAP_SERVER_URL to
-   your server's url
+   create a .env file, replace SERVER_URL with yours (ex: https://catfact.ninja/fact)  
+   EXPO_PUBLIC_HAP_SERVER_URL = SERVER_URL  
    
 
 2. Install dependencies
