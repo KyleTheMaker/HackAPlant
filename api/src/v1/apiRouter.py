@@ -5,7 +5,13 @@ from .schemas.SensorSchema import SensorData, userResponse
 router = APIRouter()
 
 
-@router.post("/device/{device_id}", status_code=status.HTTP_201_CREATED)
+@router.post("/device/register")
+def registerDevice(device_id: UUID, status_code=status.HTTP_201_CREATED):
+    print("Value from client", device_id)
+    return {"message": "device registered"}
+
+
+@router.post("/device/{device_id}/entry", status_code=status.HTTP_201_CREATED)
 def registerData(data: SensorData):
     # Save it
     pass
