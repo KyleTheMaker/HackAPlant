@@ -1,4 +1,4 @@
-from src.database.engine import create_db_and_tables
+from src.v1.apiRouter import create_db_and_tables
 from fastapi import FastAPI
 from src.v1.apiRouter import router as v1_router
 
